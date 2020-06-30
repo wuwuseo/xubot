@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  nano:
+    build: .
+    links:
+      - mysql
+      - redis
+    ports:
+      - 9501:9501
+    volumes:
+      - .:/www
+    container_name: bot-nano
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./mysql/conf:/etc/mysql
+    container_name: bot-mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: bot-phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+    restart: always
+    links:
+      - mysql
+    ports:
+      - 8080:8080
+    volumes:
+      - /sessions
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis/:/data
+    container_name: bot-redis

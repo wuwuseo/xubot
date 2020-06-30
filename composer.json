@@ -1,0 +1,9 @@
+{
+    "require": {
+        "hyperf/nano": "^1.0",
+        "hyperf/guzzle": "^2.0",
+        "hyperf/crontab": "^2.0",
+        "hyperf/db": "^2.0",
+        "hyperf/logger": "^2.0"
+    }
+}
