@@ -25,9 +25,6 @@ abstract class Command
     public function run(){
         $keyword = $this->keyword;
         foreach ($this->command as $key=>$item){
-            var_dump($this->command);
-            var_dump($key);
-            var_dump($this->config);
             if(preg_match(sprintf($key,$this->config['prefix']),$keyword)){
                 return (new $item($keyword,$this->config))->run();
             }

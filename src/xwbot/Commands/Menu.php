@@ -8,7 +8,7 @@ class Menu extends Base
 {
     public function run(){
         return <<<EOF
-TODO菜单
+{$this->config['data'][self::class]['template']}
 EOF;
 
     }
