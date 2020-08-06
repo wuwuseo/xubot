@@ -1,6 +1,5 @@
-/vendor
-/composer.lock
-/mysql
-/redis
-.env
+/vendor/
+composer.lock
+*.cache
+*.log
 /.idea

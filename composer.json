@@ -1,9 +1,34 @@
 {
+    "name": "wuwuseo/xwbot",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php"
+    ],
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "wuwuseo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
     "require": {
-        "hyperf/nano": "^1.0",
-        "hyperf/guzzle": "^2.0",
-        "hyperf/crontab": "^2.0",
-        "hyperf/db": "^2.0",
-        "hyperf/logger": "^2.0"
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14",
+        "phpstan/phpstan": "^0.10.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse": "phpstan analyse --memory-limit 300M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
     }
 }
