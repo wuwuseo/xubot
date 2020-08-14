@@ -10,9 +10,10 @@ abstract class Base
 
     protected $keyword = '';
 
-    public function __construct($keyword='',$config = []){
+    public function __construct($keyword='',$config = [],$data){
         $this->config = $config;
         $this->keyword = $keyword;
+        $this->data = $data;
     }
 
     abstract public function run();

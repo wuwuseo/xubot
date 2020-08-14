@@ -26,7 +26,7 @@ abstract class Command
         $keyword = $this->keyword;
         foreach ($this->command as $key=>$item){
             if(preg_match(sprintf($key,$this->config['prefix']),$keyword)){
-                return (new $item($keyword,$this->config))->run();
+                return (new $item($keyword,$this->config,$this->data))->run();
             }
         }
         return false;

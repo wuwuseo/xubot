@@ -10,8 +10,11 @@ class Bot extends Command
 {
     protected $type = self::class;
 
-    public function __construct($keyword = '',$config = [])
+    protected $data;
+
+    public function __construct($keyword = '',$config = [],$data)
     {
+        $this->data = $data;
         if(!empty($keyword)){
             $this->keyword = $keyword;
         }
