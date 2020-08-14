@@ -15,8 +15,7 @@ class Bot extends Command
         if(!empty($keyword)){
             $this->keyword = $keyword;
         }
-        $this->config = require_once __DIR__.DIRECTORY_SEPARATOR.'config.php';
-        $this->config = array_merge($this->config,$config);
+        $this->config = $config;
         foreach ($this->config['commands'] as $key=>$item){
             $this->create($key,$item);
         }
